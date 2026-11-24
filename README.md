@@ -35,6 +35,7 @@ Không fine-tune, không dùng dữ liệu ngoài. Siêu tham số chọn trên 
 | **+ quyết định số lượng** | | | **0,9354** | **0,2451** |
 
 Trên `holdout` (đo một lần): R@5 0,9160 · Recall 0,9115 · Precision 0,2379.
+Trên **private test** (lượt nộp chính thức, bản final): **Recall 0,9264 · Precision 0,1984**.
 Recall/Precision tính theo `src/evaluate.py` (trung bình theo câu, tối đa 5 doc). Toàn bộ thí
 nghiệm: [`experiments.csv`](experiments.csv).
 
@@ -70,7 +71,7 @@ model ứng viên khác: [`docs/param_audit.md`](docs/param_audit.md).
 | v0.3 | BM25 `syllable_bigram`, `mean_top2` | 0,8555 | 0,8555 / 0,1792 | 0,8449 | public 0,8566 / — | 524.422 |
 | v0.4 | + reranker `bge-reranker-v2-m3`, RRF | 0,8733 | — | 0,8559 | public 0,8566 / 0,1838 | 524.422 |
 | v0.6 | + kNN câu hỏi train, RRF 3 nguồn | 0,9028 | — | 0,8855 | private 0,8818 / 0,1884 | 524.422 |
-| **v0.8** | BM25 + dense, RRF + quyết định số lượng | **0,9384** | **0,9354 / 0,2451** | **0,9160** | — | 432.142 |
+| **v0.8** | BM25 + dense, RRF + quyết định số lượng | **0,9384** | **0,9354 / 0,2451** | **0,9160** | **private 0,9264 / 0,1984** | 432.142 |
 
 Kho chunk 524.422 dùng chiến lược `loose` (nhận cả trích dẫn chéo làm ranh giới), 432.142 dùng
 `strict` (chỉ tiêu đề `Điều N.`). Cách tái lập từng bản: [`docs/reproduce.md`](docs/reproduce.md).

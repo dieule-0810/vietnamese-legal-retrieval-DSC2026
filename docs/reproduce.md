@@ -96,6 +96,8 @@ Recall@5 0.9384 · Recall@20 0.9786 · Recall@50 0.9857
 Chấm như BTC: recall=0.9354 precision=0.2451
 ```
 
+**Kết quả private test** (lượt nộp chính thức, bản final): Recall 0,9264 · Precision 0,1984.
+
 BM25 một mình (`configs/v0.3_bm25_best.yaml`) trên cùng kho: `Recall@5 0.8547 · Recall@50 0.9708`.
 
 ### 3.1 Chọn siêu tham số (đã chạy, kết quả nằm trong config)
@@ -154,7 +156,8 @@ Các kiểm tra từng treo ở bản trước của tài liệu này đã có k
 `outputs/*` bị `.gitignore` chặn; mọi file ranking chỉ tồn tại trên ổ đĩa từng người. Thứ duy
 nhất trong repo ràng một bài nộp vào đầu vào sinh ra nó là kê khai `docs/releases/*.yaml`
 (kiểm bằng `scripts/verify_release.py`). Lượt nộp v0.8 (`outputs/private_hybrid_doc_calibrated/`)
-**chưa có kê khai** và chưa có tag.
+đã nộp private test (bản final: Recall 0,9264 · Precision 0,1984) nhưng **chưa có kê khai** và
+chưa có tag.
 
 `outputs/v0.2_bm25_tok/` là chạy demo (corpus giả 429 chunk) — không dùng cho kết luận nào.
 

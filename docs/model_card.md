@@ -65,12 +65,16 @@ Trên `holdout` n=1.000 (đo một lần, 09/10/2026, θ giữ nguyên từ trai
 Recall@5 0,9160 · Recall@50 0,9773; sau bộ quyết định số lượng BTC recall 0,9115 · precision
 0,2379. Chênh dev → holdout −0,0224 ở R@5, cùng độ lớn với các bản trước.
 
+Trên **private test** n=2.080 (leaderboard, lượt nộp chính thức — v0.8 là bản final của nhóm):
+BTC recall **0,9264** · precision **0,1984**. Recall cao hơn ước lượng holdout (+0,0149) và hơn
+v0.6 trên cùng tập (0,8818, +0,0446).
+
 ## Hạn chế đã biết
 
 - **Nhãn không đầy đủ**: cùng câu hỏi có gold khác nhau trong `train.json` (vd "Tham nhũng là gì?"
   → `211897` và `279667`). Recall thật cao hơn con số đo được.
-- v0.8 chưa được nộp lên leaderboard (private test đã đóng), nên holdout là ước lượng ngoài mẫu
-  tốt nhất hiện có cho bản này.
+- Lượt nộp private của v0.8 chưa có kê khai trong `docs/releases/` và chưa có git tag, nên chưa
+  kiểm lại được bằng `scripts/verify_release.py` rằng file đã nộp khớp đúng config này.
 - Precision vẫn thấp (0,2451) vì phần lớn câu vẫn trả 5 doc — khe hở điểm RRF chỉ nhận một số ít
   giá trị rời rạc nên tín hiệu tự tin yếu.
 - Kho chunk theo Điều không áp dụng được cho TCVN/QCVN (~8,7% văn bản) → cắt cửa sổ trượt.
